@@ -51,29 +51,31 @@
 			In this homework, I implemented a cloth simulator that rendered the wireframe of a cloth composed of point masses and springs, the physics of cloth around objects (spheres and planes), as well as implementing shading techniques, both new and from previous homeworks. I found the most interesting aspects of the assignment the different parameters that could be changed during simulation such as the spring constant, damping, and density; it was cool to see how the simulation behaved under different conditions and I learned more about physics as well.
 			
 		<h2>Part 1: Masses and springs</h2>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-		<p>Here is an example 2x2 gridlike structure using an HTML table. Each <b>tr</b> is a row and each <b>td</b> is a column in that row. You might find this useful for framing and showing your result images in an organized fashion.</p>
 		<div style="display: flex; flex-direction: column; align-items: center;">
 			<table style="width: 100%; text-align: center; border-collapse: collapse;">
 			  <tr>
 				<td style="text-align: center;">
-				  <img src="assets/clothsim.png" width="400px"/>
-				  <figcaption>Caption goes here.</figcaption>
-				</td>
-				<td style="text-align: center;">
-				  <img src="assets/clothsim.png" width="400px"/>
-				  <figcaption>Caption goes here.</figcaption>
+				  <img src="assets/part1.png" width="400px"/>
+				  <figcaption>pinned2.json</figcaption>
 				</td>
 			  </tr>
+			</table>
+		</div>
+		<p>Above is the wireframe comprised of point masses and springs. By only turning on the shearing constraint, point masses are only diagonally connected which is displayed in the wireframe. By only turning off the shearing constraint, we see that point masses are horizontally and vertically connected. By turning on all constraints the connections are compounded and the point masses are connected to each other in all directions (horizontal, vertical, diagonal).</p>
+		<div style="display: flex; flex-direction: column; align-items: center;">
+			<table style="width: 100%; text-align: center; border-collapse: collapse;">
 			  <tr>
 				<td style="text-align: center;">
-				  <img src="assets/clothsim.png" width="400px"/>
-				  <figcaption>Caption goes here.</figcaption>
+				  <img src="assets/onlyshearing.png" width="400px"/>
+				  <figcaption>Wireframe with only shearing constraints.</figcaption>
 				</td>
 				<td style="text-align: center;">
-				  <img src="assets/clothsim.png" width="400px"/>
-				  <figcaption>Caption goes here.</figcaption>
+				  <img src="assets/withoutshearing.png" width="400px"/>
+				  <figcaption>Wireframe without shearing constraints.</figcaption>
+				</td>
+				  <td style="text-align: center;">
+				  <img src="assets/allconstraintshw4.png" width="400px"/>
+				  <figcaption>Wireframe with all constraints.</figcaption>
 				</td>
 			  </tr>
 			</table>
