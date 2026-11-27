@@ -236,9 +236,33 @@
 		</p>
 
 		<p>
-			The Blinn-Phong shading model, which has been used in previous homeworks, is a shading technique that combines ambient, diffuse, and specular lighting together for each fragment. 
+			The Blinn-Phong shading model, which has been used in previous homeworks, is a shading technique that combines ambient, diffuse, and specular lighting together for each fragment. Given the equation L=k a I a+k d(I/r 2) max(0,n⋅l) +k s(I/r 2) max(0,n⋅h) p, I set k_a = 0.1, kd = (1,1,1), ks = 0.5, Ia = (1,1,1), and finally p = 32.  I set n to the normalized value of the given v_normal variable, l to the normalized value of the to_light variable, and h by normalizing the sum between l and the normalized difference between u_cam_pos - v_position.xyz. By saving the ambient, diffuse, and specular values to different variables I was able to isolate them for the output below.
 		</p>
+		<div style="display: flex; flex-direction: column; align-items: center;">
+			<table style="width: 150%; text-align: center; border-collapse: collapse;">
+			  <tr>
+				<td style="text-align: center;">
+				  <img src="assets/part5phongambient.png" width="400px"/>
+				  <figcaption>High Density</figcaption>
+				</td>
+				<td style="text-align: center;">
+				  <img src="assets/part5phongdiffuse.png" width="400px"/>
+				  <figcaption>Low Density</figcaption>
+				</td>
+			  </tr>
+				<tr>
+				  <td style="text-align: center;">
+				  <img src="assets/part5phonspecular.png" width="400px"/>
+				  <figcaption>Low ks</figcaption>
+				</td>
+					<td style="text-align: center;">
+				  <img src="assets/part5phong.png" width="400px"/>
+				  <figcaption>High ks</figcaption>
+				</td>
+			  </tr>
+			</table>
 			
+		</div>
 		</div>
 	</body>
 </html>
