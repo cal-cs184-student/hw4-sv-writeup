@@ -82,8 +82,67 @@
 		</div>
 
 		<h2>Part 2: Simulation via numerical integration</h2>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
+		This is the cloth in its resting state with default parameters.
+		<div style="display: flex; flex-direction: column; align-items: center;">
+			<table style="width: 150%; text-align: center; border-collapse: collapse;">
+			  <tr>
+				<td style="text-align: center;">
+				  <img src="assets/part2normal.png" width="400px"/>
+				  <figcaption>pinned2.json</figcaption>
+				</td>
+			  </tr>
+			</table>
+		</div>
+		<p>
+			When changing the density, we effectively make the cloth heavier and thus it displays as further weighed down by gravity. At a low density value, the cloth appears smoother and has less wrinkles/folds. At a high density value, the cloth has several more wrinkles/folds indicating that it is getting weighed down more.
+		</p>
+		<div style="display: flex; flex-direction: column; align-items: center;">
+			<table style="width: 150%; text-align: center; border-collapse: collapse;">
+			  <tr>
+				<td style="text-align: center;">
+				  <img src="assets/part2lowdensity.png" width="400px"/>
+				  <figcaption>Low Density</figcaption>
+				</td>
+				<td style="text-align: center;">
+				  <img src="assets/part2highdensity.png" width="400px"/>
+				  <figcaption>High Density</figcaption>
+				</td>
+			  </tr>
+			</table>
+		</div>
+			
+			<p>Similarly, when changing the spring constant we change the 'stiffness' of the cloth. With a higher spring constant the higher the cloth's stiffness, and the cloth appears very stiff with minimal folds. At a low spring constant, the cloth is very flexible and holds several more folds.</p>
+		<div style="display: flex; flex-direction: column; align-items: center;">
+			<table style="width: 150%; text-align: center; border-collapse: collapse;">
+			  <tr>
+				<td style="text-align: center;">
+				  <img src="assets/part2lowks.png" width="400px"/>
+				  <figcaption>Low ks value</figcaption>
+				</td>
+				<td style="text-align: center;">
+				  <img src="assets/part2highks.png" width="400px"/>
+				  <figcaption>High ks value</figcaption>
+				</td>
+			  </tr>
+			</table>
+		</div>
+			<p>When changing the damping value, we change how much momentum the cloth holds when it falls. With greater damping, the cloth falls with less speed and also has a smaller range of motion. In contrast, a smaller damping value causes the cloth to fall with greater speed and range of motion, swinging back and forth for a longer period of time.
+		</p>
+		<div style="display: flex; flex-direction: column; align-items: center;">
+			<table style="width: 150%; text-align: center; border-collapse: collapse;">
+			  <tr>
+				<td style="text-align: center;">
+				  <img src="assets/part2lowdamping.png" width="400px"/>
+				  <figcaption>Low Damping</figcaption>
+				</td>
+				<td style="text-align: center;">
+				  <img src="assets/part2highdamping.png" width="400px"/>
+				  <figcaption>High Damping</figcaption>
+				</td>
+			  </tr>
+			</table>
+		</div>
+			
 		<h2>Part 3: Handling collisions with other objects</h2>
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
