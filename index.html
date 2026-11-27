@@ -144,7 +144,42 @@
 		</div>
 			
 		<h2>Part 3: Handling collisions with other objects</h2>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		<p>To implement collisions with spheres, I first checked whether the point mass' position was inside of the sphere by checking whether the squared length of the radial (pm.position - origin) is less than the squared radius (radius2). If so, then we calculate the tangent point by projecting the radial onto the sphere surface. Finally, I update the position of the point mass by adding its correction (the difference between the last position and the tangent point), and adjusting it for friction by scaling with (1-friction).</p>
+
+			<div style="display: flex; flex-direction: column; align-items: center;">
+			<table style="width: 150%; text-align: center; border-collapse: collapse;">
+			  <tr>
+				<td style="text-align: center;">
+				  <img src="assets/part3sphere500ks.png" width="400px"/>
+				  <figcaption>Sphere at ks=500</figcaption>
+				</td>
+				<td style="text-align: center;">
+				  <img src="assets/part3sphere5000ks.png" width="400px"/>
+				  <figcaption>Sphere at ks=5000</figcaption>
+				</td>
+				  <td style="text-align: center;">
+				  <img src="assets/part3sphere50000ks.png" width="400px"/>
+				  <figcaption>Sphere at ks=50000</figcaption>
+				</td>
+			  </tr>
+			</table>
+		</div>
+			
+			<p>As we saw in the cloth simulation without colliding with objects, changing the spring constant will affect the cloth's flexibility. With a lower spring constant, the cloth is very flexible and drapes more closely to the sphere. With a higher spring constant, the cloth does not bend as much and takes a flatter shape, only slightly draping itself over the sphere.</p>
+
+			<p>Similar to the sphere, to implement collisions with planes we first check whether the point mass position crossed the plane by computing the dot products (pm.position - point) • normal and (pm.last_position - point) • normal, checking if the two results are opposite signs. Then, like the sphere we calculate its projected point with pm.position - ((pm.position - point) • normal) * normal, apply the offset and scale for friction, updating the point mass position with the result. </p>
+
+		<div style="display: flex; flex-direction: column; align-items: center;">
+			<table style="width: 150%; text-align: center; border-collapse: collapse;">
+			  <tr>
+				<td style="text-align: center;">
+				  <img src="assets/part3plane.png" width="400px"/>
+				  <figcaption>Plane</figcaption>
+				</td>
+			  </tr>
+			</table>
+		</div>
+			
 
 		<h2>Part 4: Handling self-collisions</h2>
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
