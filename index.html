@@ -182,8 +182,54 @@
 			
 
 		<h2>Part 4: Handling self-collisions</h2>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		<p>I first start the implementation of self collisions by implementing hash_position, which takes a 3D Vector position and returns what mapped 3D box it is. This is done by dividing each coordinate by the box dimensions, which were calculated with 3 * width (or height) / num_width_points (or num_height_points), with the z dimension being the max between width and height, and taking the floor of the result. I then used hash_position within build_spatial_map to go iterate each point mass and map it to its corresponding box. With the spatial map constructed, self_collide first gets the box at the point mass' hash position and uses the other point masses in the box as potential collision candidates. If the candidate is within the minimum distance 2 * thickness, we calculate the correction by first getting the difference between the point mass and the candidate's position (separation), dividing it by its norm (direction) and multiplying the direction with the minumum distance 2*thickness - the separation norm. We add this result to the total corrections, as well as add it to the amount of total collisions. If the candidate is itself, or if the cadidate is pinned, we skip and do not see them as correction targets. Finally, we calculate the average corrections using the aforementioned total correction and total collision values along with simulation_steps, and use the result to update the point mass position.</p>
+			
+		<div style="display: flex; flex-direction: column; align-items: center;">
+			<table style="width: 150%; text-align: center; border-collapse: collapse;">
+			  <tr>
+				<td style="text-align: center;">
+				  <img src="assets/part4start.png" width="400px"/>
+				  <figcaption>Start</figcaption>
+				</td>
+				<td style="text-align: center;">
+				  <img src="assets/part4middle.png" width="400px"/>
+				  <figcaption>Middle</figcaption>
+				</td>
+				  <td style="text-align: center;">
+				  <img src="assets/part4end.png" width="400px"/>
+				  <figcaption>End</figcaption>
+				</td>
+			  </tr>
+			</table>
+		</div>
 
+			<p>As described in previous parts, the density affects the weight of the cloth and the spring constant affects the flexibility of the cloth. A high density/low ks causes it to be heavier or more flexible than the plane, making it fall through. In contrast, a low density/high ks allows it to even out and hold less wrinkles over time. </p>
+		
+		<div style="display: flex; flex-direction: column; align-items: center;">
+			<table style="width: 150%; text-align: center; border-collapse: collapse;">
+			  <tr>
+				<td style="text-align: center;">
+				  <img src="assets/part4highdensity.png" width="400px"/>
+				  <figcaption>High Density</figcaption>
+				</td>
+				<td style="text-align: center;">
+				  <img src="assets/part4lowdensity.png" width="400px"/>
+				  <figcaption>Low Density</figcaption>
+				</td>
+			  </tr>
+				<tr>
+				  <td style="text-align: center;">
+				  <img src="assets/part4lowks.png" width="400px"/>
+				  <figcaption>Low ks</figcaption>
+				</td>
+					<td style="text-align: center;">
+				  <img src="assets/part4highks.png" width="400px"/>
+				  <figcaption>High ks</figcaption>
+				</td>
+			  </tr>
+			</table>
+		</div>
+			
 		<h2>Part 5: Shaders</h2>
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
