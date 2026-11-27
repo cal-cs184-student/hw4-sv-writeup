@@ -231,9 +231,14 @@
 		</div>
 			
 		<h2>Part 5: Shaders</h2>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		<p>
+			Shaders programs are a way to allow shade rendering to be done in parallel on a GPU, significantly saving time and more efficiently delegating compute resources for a more efficient and practical graphics pipeline. We use the vertex shader to apply transformations to vertices before rasterization, and the fragment shader to apply transformations to the resulting fragments from those vertices after rasterization. These two shading types work together as the vertex shaders are responsible for determining where the shape sits in 3D space in addition to other important details such as its surface normal and corresponding texture space position, which is used within fragment shaders to calculate the final shading color for each pixel.
+		</p>
 
-	
+		<p>
+			The Blinn-Phong shading model, which has been used in previous homeworks, is a shading technique that combines ambient, diffuse, and specular lighting together for each fragment. 
+		</p>
+			
 		</div>
 	</body>
 </html>
