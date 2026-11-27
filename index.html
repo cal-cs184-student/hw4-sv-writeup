@@ -272,9 +272,47 @@
 			  </tr>
 			</table>
 		</div>
+					<div style="display: flex; flex-direction: column; align-items: center;">
+			<table style="width: 150%; text-align: center; border-collapse: collapse;">
+			  <tr>
+				<td style="text-align: center;">
+				  <img src="assets/part5bump.png" width="400px"/>
+				  <figcaption>Bump Shading</figcaption>
+				</td>
+				<td style="text-align: center;">
+				  <img src="assets/part5displacement.png" width="400px"/>
+				  <figcaption>Displacement Shading</figcaption>
+				</td>
+			  </tr>
+			</table>
+		</div>
 		<p>
 			In the bump shading, we only recalculate each frament's normal, which affects its appearance with highlights and shading, but does not change the silhouette in the rendering result. In contrast, with displacement shading we additionally move each mesh vertex based on the height in the vertex' UV coordinate, causing changes to the silhouette. We can see the effects of the different approaches when changing the resolution from 16 to 128. With displacement shading, the difference is more subtle as the mesh vertices are always adjusted causing the sphere's silhouette to look lumpy, whereas the difference with bump shading is more noticeable. At a=16 and o=16, the sphere has more jagged edges and at a=128 and o=128 the sphere is noticeably smoother.
 		</p>
+		<div style="display: flex; flex-direction: column; align-items: center;">
+			<table style="width: 150%; text-align: center; border-collapse: collapse;">
+			  <tr>
+				<td style="text-align: center;">
+				  <img src="assets/part5displacement16.png" width="400px"/>
+				  <figcaption>Displacement with Low Resolution</figcaption>
+				</td>
+				<td style="text-align: center;">
+				  <img src="assets/part5displacement128.png" width="400px"/>
+				  <figcaption>Displacement with High Resolution</figcaption>
+				</td>
+			  </tr>
+				<tr>
+				  <td style="text-align: center;">
+				  <img src="assets/part5bump16.png" width="400px"/>
+				  <figcaption>Bump with Low Resolution</figcaption>
+				</td>
+					<td style="text-align: center;">
+				  <img src="assets/part5bump128.png" width="400px"/>
+				  <figcaption>Bump with High Resolution</figcaption>
+				</td>
+			  </tr>
+			</table>
+		</div>
 			
 		</div>
 		</div>
